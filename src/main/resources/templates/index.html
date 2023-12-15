@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Getting Started: Serving Web Content</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script src="js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/style.default.css" />
+</head>
+
+<body>
+	<div class="row p-3">
+		<div class="col-6 p-3">
+			<ul>
+				<h2>web page</h2>
+				<li>
+					<p>index(同首頁) <a href="/index"> here</a></p>
+				</li>
+				<li>
+					<p>index2(測試 UrlParam) <a href="/index2?a=1&b=2"> here</a></p>
+				</li>
+				<li>
+					<p>index3(測試 ModelAndView)<a href="/index3">here</a></p>
+				</li>
+				<li>
+					<p>index4(測試 void)<a href="/index4">here</a></p>
+				</li>
+				<li>
+					<p>login page<a href="/ssologin">here</a></p>
+				</li>
+				<li>
+					<p>logout page<a href="/logout">here</a></p>
+				</li>
+			</ul>
+			<ul>
+				<h2>web API</h2>
+				<li>
+					<p>hello (列出全員工)<a href="/emp/hello">here</a></p>
+				</li>
+				<li>
+					<p>hello2 (servlet)<a href="/emp/hello2">here</a></p>
+				</li>
+				<li>
+					<p>hello3 (servlet 返圖片)<a href="/emp/hello3">here</a></p>
+				</li>
+				<li>
+					<p>hello4 (url路徑當變數)<a href="/emp/hello4/abc">here</a></p>
+				</li>
+				<li>
+					<p>hello5 (測試 UrlParam)<a href="/emp/hello5?a=1&b=2">here</a></p>
+				</li>
+				<li>
+					<p>hello6<a href="/emp/hello6">here</a></p>
+				</li>
+				<li>
+					<p>hello6<button onclick="post1()">here</button></p>
+				</li>
+			</ul>
+			<ul>
+				<h2>Auth web API</h2>
+				<li>
+					<p>first<a href="/auth/first">here</a></p>
+				</li>
+				<li>
+					<p>er (除零強制出錯)<a href="/auth/er">here</a></p>
+				</li>
+			</ul>
+		</div>
+		<div class="col-6 p-3">
+			<div id="show6"></div>
+		</div>
+	</div>
+
+
+</body>
+<script>
+	function post1() {
+		let data = {
+			a: "1",
+			b: new Date(),
+			c:1
+		}
+		$.ajax({
+			type: "POST",
+			url: "emp/hello6",
+			data: JSON.stringify(data),
+			contentType: 'application/json;charset=utf-8',
+			success: function (response) { 
+				console.log(response)
+				$("#show6").text(JSON.stringify(response))
+			}
+		});
+		console.log("1")
+	}
+</script>
+
+</html>

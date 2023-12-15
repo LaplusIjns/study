@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>index3 (測試 ModelAndView)</h1>
+	<h3>後端傳回的資料</h3>
+	<table>
+		<tr>
+			<td>編號</td>
+			<td>[[ ${ vo.serno } ]]</td>
+		</tr>
+		<tr>
+			<td>產品名字</td>
+			<td>[[ ${ vo.productName } ]]</td>
+		</tr>
+		<tr>
+			<td>版本</td>
+			<td th:each="subversion : ${vo.version}">
+				<div>子版本　　　</div>
+				<div th:text="${subversion}"></div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
