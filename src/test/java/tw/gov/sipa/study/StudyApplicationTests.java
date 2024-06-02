@@ -17,7 +17,7 @@ import com.sun.tools.attach.AttachNotSupportedException;
 import tw.linkedin.study.repository.EmployeeRepository;
 import tw.linkedin.study.service.EmployeeService;
 import tw.linkedin.study.service.EmployeeService;
-import tw.linkedin.study.StudyApplication 
+import tw.linkedin.study.StudyApplication;
 
 @SpringBootTest(classes = StudyApplication .class)
 class StudyApplicationTests {
